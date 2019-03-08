@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{2191EC31-CD29-42BD-8081-92299529DA5B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GestionEcole/Program.cs">
+    <Files>
+      <File FileName="EcoleLibrary/Ecole.cs" Line="102" Column="45" />
+      <File FileName="GestionEcole/Program.cs" Line="39" Column="37" />
+      <File FileName="EcoleLibrary/Classe.cs" Line="10" Column="6" />
+      <File FileName="EcoleLibrary/ClasseEtudiant.cs" Line="38" Column="2" />
+      <File FileName="EcoleLibrary/Etudiant.cs" Line="24" Column="30" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GestionEcole" expanded="True">
+            <Node name="ConsoleEcole" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+            <Node name="EcoleLibrary" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ConsoleEcole PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
