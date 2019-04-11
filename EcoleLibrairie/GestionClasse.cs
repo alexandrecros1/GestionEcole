@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 
 namespace EcoleLibrary
 {
     public class GestionClasse : GestionBase
     {
+        private static GestionClasse instance;
         #region Builders
-        public GestionClasse() : base()
-        {
-        }
+       
         #endregion
 
         public List<Classe> ListeClasse()
@@ -20,10 +20,10 @@ namespace EcoleLibrary
             {
                 Open();
 
-                string query = "SELECT * FROM classe";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                string query = @"SELECT * FROM classe";
+                SqlCommand cmd = new SqlCommand(query, connection);
 
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     try
@@ -32,7 +32,7 @@ namespace EcoleLibrary
                         if (classe != null)
                             liste.Add(classe);
                     }
-                    catch (MySqlException)
+                    catch (SqlException)
                     {
 
                     }
@@ -40,7 +40,7 @@ namespace EcoleLibrary
                 }
                 reader.Close();
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
             }
             finally
@@ -51,23 +51,29 @@ namespace EcoleLibrary
         }
 
         #region CRUD
+
         // Ajouter une Classe : le C dans CRUD
         public bool AjouterClasse(Classe classe)
         {
-            bool result = true;
+            bool result = false;
             try
             {
                 Open();
-                string query = @"INSERT INTO Classe VALUES (@idclasse, @nomclasse, @nbplace)";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@idclasse", classe.Idclasse);
-                cmd.Parameters.AddWithValue("@nomclasse", classe.Nomclasse);
-                cmd.Parameters.AddWithValue("@nbplace", classe.Nbplace);
-                MySqlParameter idclasse = cmd.Parameters.Add("@idclasse", MySqlDbType.Int32);
-                idclasse.Direction = ParameterDirection.Output;
+                string query = @"INSERT INTO Classe VALUES (@idClasse, @nomClasse, @nbPlace)";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@idClasse", classe.Idclasse);
+                cmd.Parameters.AddWithValue("@nomClasse", classe.Nomclasse);
+                cmd.Parameters.AddWithValue("@nbPlace", classe.Nbplace);
+                SqlParameter newId = cmd.Parameters.Add("@newIdClasse", SqlDbType.Int);
+                newId.Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
+
+                classe.Idclasse = Convert.ToInt32(newId.Value);
+                if (classe.Idclasse > 0)
+                    result = true;
+
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
                 result = false;
             }
@@ -85,12 +91,12 @@ namespace EcoleLibrary
             try
             {
                 Open();
-                string query = @"DELETE FROM Classe WHERE Idclasse = @idclasse";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@idclasse", classe.Idclasse);
+                string query = @"DELETE FROM Classe WHERE Idclasse = @idClasse";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@idClasse", classe.Idclasse);
                 result = cmd.ExecuteNonQuery();
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
             }
             finally
@@ -107,14 +113,14 @@ namespace EcoleLibrary
             try
             {
                 Open();
-                string query = @"UPDATE classe SET Idclasse = @idclasse, Nomclasse = @nomclasse, Nbplace = @nbplace WHERE Idclasse = @idclasse";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@idclasse", classe.Idclasse);
-                cmd.Parameters.AddWithValue("@nomclasse", classe.Nomclasse);
-                cmd.Parameters.AddWithValue("@nbplace", classe.Nbplace);
+                string query = @"UPDATE classe SET Idclasse = @idClasse, Nomclasse = @nomClasse, Nbplace = @nbPlace WHERE Idclasse = @idClasse";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@idClasse", classe.Idclasse);
+                cmd.Parameters.AddWithValue("@nomClasse", classe.Nomclasse);
+                cmd.Parameters.AddWithValue("@nbPlace", classe.Nbplace);
                 result = cmd.ExecuteNonQuery();
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
             }
             finally
@@ -125,5 +131,19 @@ namespace EcoleLibrary
 
         }
         #endregion
+        public GestionClasse() : base()
+        {
+        }
+        public static GestionClasse Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GestionClasse();
+                }
+                return instance;
+            }
+        }
     }
 }

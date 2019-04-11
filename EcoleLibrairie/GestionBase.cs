@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace EcoleLibrary
 {
@@ -9,14 +10,14 @@ namespace EcoleLibrary
         // Chaine de connection à la BD
         private string connectionString;
         // Connection à la BD
-        public MySqlConnection connection;
+        public SqlConnection connection;
         #endregion
 
         #region Builders
         public GestionBase()
         {
-            this.connectionString = Connexion.ADO_CONNEXION_STRING;
-            connection = new MySqlConnection(connectionString);
+            this.connectionString = Connexion.Connect;
+            connection = new SqlConnection(connectionString);
         }
         #endregion
 
@@ -39,7 +40,7 @@ namespace EcoleLibrary
                 connection.Close();
         }
 
-        public MySqlConnection GetMySqlConnection() { return this.connection; }
+        public SqlConnection GetMySqlConnection() { return this.connection; }
         #endregion
     }
 }

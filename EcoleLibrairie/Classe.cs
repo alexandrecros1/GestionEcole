@@ -9,8 +9,8 @@ namespace EcoleLibrary
     public class Classe
     {
         #region Attributs
-        private int idclasse;
-        private string nomclasse;
+        private int idClasse;
+        private string nomClasse;
         private int nbPlace;
         private List<Classe> listeClasse = new List<Classe>();
         #endregion
@@ -18,13 +18,13 @@ namespace EcoleLibrary
         #region Propriétés
         public int Idclasse
         {
-            get { return idclasse; }
-            set { idclasse = value; }
+            get { return idClasse; }
+            set { idClasse = value; }
         }
         public string Nomclasse
         {
-            get { return nomclasse; }
-            set { nomclasse = value; }
+            get { return nomClasse; }
+            set { nomClasse = value; }
         }
         public int Nbplace
         {
@@ -38,10 +38,10 @@ namespace EcoleLibrary
         #endregion
 
         #region Constructeur
-        public Classe(int id, string nomclasse, int nbPlace)
+        public Classe(int idClasse, string nomClasse, int nbPlace)
         {
-            Idclasse = id;
-            Nomclasse = nomclasse;
+            Idclasse = idClasse;
+            Nomclasse = nomClasse;
             Nbplace = nbPlace;
         }
         #endregion

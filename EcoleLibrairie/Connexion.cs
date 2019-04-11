@@ -2,6 +2,6 @@
 {
     public static class Connexion
     {
-        public static string ADO_CONNEXION_STRING = "Server=127.0.0.1;Database=managschool;Uid=root;Pwd=;port=8889;";
+        public static string Connect = @"Data Source=sqlserver.montpellier.epsi.fr,4433;Initial Catalog=managschool;Persist Security Info=True;User ID=alexandre.cros1;Password=731GOP";
     }
 }

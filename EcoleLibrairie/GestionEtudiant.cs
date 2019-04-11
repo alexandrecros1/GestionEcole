@@ -2,44 +2,46 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace EcoleLibrary
 {
     public class GestionEtudiant : GestionBase
     {
+        private static GestionEtudiant instance;
         #region Builders
         public GestionEtudiant() : base()
         {
         }
         #endregion
 
-        public List<Etudiant> ListeEtudiant()
+        public List<EtudiantDto> ListeEtudiant()
         {
-            List<Etudiant> liste = new List<Etudiant>();
+            List<EtudiantDto> liste = new List<EtudiantDto>();
             try
             {
                 Open();
 
                 string query = "SELECT * FROM etudiant";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                SqlCommand cmd = new SqlCommand(query, connection);
 
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     try
                     {
-                        Etudiant etudiant = new Etudiant(reader.GetInt32(0), reader.GetString(1), reader.GetString(2),
-                            reader.GetDateTime(3), reader.GetString(4), reader.GetString(5), reader.GetString(6));
+                        EtudiantDto etudiant = new EtudiantDto(reader.GetInt32(0), reader.GetString(1), reader.GetString(2),
+                            reader.GetDateTime(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8));
                         if (etudiant != null)
                             liste.Add(etudiant);
                     }
-                    catch (MySqlException)
+                    catch (SqlException)
                     {
                     }
                 }
                 reader.Close();
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
             }
             finally
@@ -50,27 +52,28 @@ namespace EcoleLibrary
         }
 
         #region CRUD
-        // Ajouter une Classe : le C dans CRUD
-        public bool AjouterEtudiant(Etudiant etudiant)
+        // Ajouter un étudiant : le C dans CRUD
+        public bool AjouterEtudiant(EtudiantDto etudiant)
         {
             bool result = true;
             try
             {
                 Open();
-                string query = @"INSERT INTO Classe VALUES (@id, @nom, @prenom, @dateNaissance, @adresse, @mail, @classe)";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", etudiant.Id);
-                cmd.Parameters.AddWithValue("@nom", etudiant.Nom);
-                cmd.Parameters.AddWithValue("@prenom", etudiant.Prenom);
-                cmd.Parameters.AddWithValue("@dateNaissance", etudiant.DateNaissance);
-                cmd.Parameters.AddWithValue("@adresse", etudiant.Adresse);
-                cmd.Parameters.AddWithValue("@mail", etudiant.Mail);
-                cmd.Parameters.AddWithValue("@classe", etudiant.Classe);
-                MySqlParameter idclasse = cmd.Parameters.Add("@idclasse", SqlDbType.Int);
-                idclasse.Direction = ParameterDirection.Output;
+                string query = @"INSERT INTO Classe VALUES (@idEtudiant, @nomEtudiant, @prenomEtudiant, @dateNaissanceEtudiant,
+@adresseEtudiant, @mailEtudiant, @idClasse, @idVille, @idStatut)";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@idEtudiant", etudiant.Id);
+                cmd.Parameters.AddWithValue("@nomEtudiant", etudiant.Nom);
+                cmd.Parameters.AddWithValue("@prenomEtudiant", etudiant.Prenom);
+                cmd.Parameters.AddWithValue("@dateNaissanceEtudiant", etudiant.DateNaissance);
+                cmd.Parameters.AddWithValue("@adresseEtudiant", etudiant.Adresse);
+                cmd.Parameters.AddWithValue("@mailEtudiant", etudiant.Mail);
+                cmd.Parameters.AddWithValue("@idClasse", etudiant.Idclasse);
+                cmd.Parameters.AddWithValue("@idVille", etudiant.Idville);
+                cmd.Parameters.AddWithValue("@idStatut", etudiant.Idstatut);
                 cmd.ExecuteNonQuery();
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
                 result = false;
             }
@@ -82,18 +85,18 @@ namespace EcoleLibrary
         }
 
         // Supprimer un étudiant : le D dans CRUD
-        public bool SupprimerEtudiant(Etudiant etudiant)
+        public bool SupprimerEtudiant(EtudiantDto etudiant)
         {
             int result = 0;
             try
             {
                 Open();
-                string query = @"DELETE FROM Etudiant WHERE Id = @id";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", etudiant.Id);
+                string query = @"DELETE FROM Etudiant WHERE Idetudiant = @idEtudiant";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@idEtudiant", etudiant.Id);
                 result = cmd.ExecuteNonQuery();
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
             }
             finally
@@ -104,25 +107,28 @@ namespace EcoleLibrary
         }
 
         // Modifier un étudiant : le U dans CRUD
-        public bool ModifierEtudiant(Etudiant etudiant)
+        public bool ModifierEtudiant(EtudiantDto etudiant)
         {
             int result = 0;
             try
             {
                 Open();
-                string query = @"UPDATE etudiant SET Id = @id, Nom = @nom, Prenom = @prenom, DateNaissance = @dateNaissance,
-                                Adresse = @adresse, Mail = @mail, Classe = @classe WHERE Id = @id";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", etudiant.Id);
-                cmd.Parameters.AddWithValue("@nom", etudiant.Nom);
-                cmd.Parameters.AddWithValue("@prenom", etudiant.Prenom);
-                cmd.Parameters.AddWithValue("@dateNaissance", etudiant.DateNaissance);
-                cmd.Parameters.AddWithValue("@adresse", etudiant.Adresse);
-                cmd.Parameters.AddWithValue("@mail", etudiant.Mail);
-                cmd.Parameters.AddWithValue("@classe", etudiant.Classe);
+                string query = @"UPDATE etudiant SET Idetudiant = @idEtudiant, Nometudiant = @nomEtudiant, Prenometudiant = @prenomEtudiant,
+Datenaissanceetudiant = @dateNaissanceEtudiant, Adresseetudiant = @adresseEtudiant, Mailetudiant = @mailEtudiant, Idclasse = @idClasse,
+Idville = @idVille, Idstatut = @idStatut WHERE Idetudiant = @idEtudiant";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@idEtudiant", etudiant.Id);
+                cmd.Parameters.AddWithValue("@nomEtudiant", etudiant.Nom);
+                cmd.Parameters.AddWithValue("@prenomEtudiant", etudiant.Prenom);
+                cmd.Parameters.AddWithValue("@dateNaissanceEtudiant", etudiant.DateNaissance);
+                cmd.Parameters.AddWithValue("@adresseEtudiant", etudiant.Adresse);
+                cmd.Parameters.AddWithValue("@mailEtudiant", etudiant.Mail);
+                cmd.Parameters.AddWithValue("@idClasse", etudiant.Idclasse);
+                cmd.Parameters.AddWithValue("@idVille", etudiant.Idville);
+                cmd.Parameters.AddWithValue("@idStatut", etudiant.Idstatut);
                 result = cmd.ExecuteNonQuery();
             }
-            catch (MySqlException)
+            catch (SqlException)
             {
             }
             finally
@@ -133,5 +139,17 @@ namespace EcoleLibrary
 
         }
         #endregion
+
+        public static GestionEtudiant Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new GestionEtudiant();
+                }
+                return instance;
+            }
+        }
     }
 }

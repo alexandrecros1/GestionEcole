@@ -21,5 +21,12 @@ namespace WindowsForms
         {
 
         }
+
+        private void ListeClasse_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'classeDataSet.classe'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.classeTableAdapter.Fill(this.classeDataSet.classe);
+
+        }
     }
 }

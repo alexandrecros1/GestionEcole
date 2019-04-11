@@ -1,7 +1,11 @@
-﻿using EcoleLibrary;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -13,29 +17,21 @@ namespace WindowsForms
             InitializeComponent();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ListeEtudiant_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'etudiantDataSet.etudiant'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.etudiantTableAdapter.Fill(this.etudiantDataSet.etudiant);
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
-        public void AffichageEtudiant()
-        {
-            GestionEtudiant gestion = new GestionEtudiant();
-            List<Etudiant> Liste = gestion.ListeEtudiant();
-            foreach (var etudiant in Liste)
-            {
-                ListViewItem ligne = new ListViewItem(new string[] { etudiant.Nom, etudiant.Prenom, etudiant.DateNaissance.ToString("ddMMyyyy"), etudiant.Adresse, etudiant.Mail });
-                listView1.Items.Add(ligne);
-            }
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AffichageEtudiant();
         }
     }
 }

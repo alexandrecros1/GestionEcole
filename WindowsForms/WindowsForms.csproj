@@ -33,11 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.7.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.7.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.15\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
@@ -76,6 +76,31 @@
     </Compile>
     <Compile Include="AjouterEtudiant.Designer.cs">
       <DependentUpon>AjouterEtudiant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ajoutEtudiantClasse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ajoutEtudiantClasse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ajoutEtudiantStatut.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ajoutEtudiantStatut.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ajoutEtudiantVille.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ajoutEtudiantVille.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="classeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>classeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="etudiantDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>etudiantDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ListeClasse.cs">
       <SubType>Form</SubType>
@@ -133,6 +158,61 @@
     <EmbeddedResource Include="Statistiques.resx">
       <DependentUpon>Statistiques.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ajoutEtudiantClasse.xsc">
+      <DependentUpon>ajoutEtudiantClasse.xsd</DependentUpon>
+    </None>
+    <None Include="ajoutEtudiantClasse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ajoutEtudiantClasse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ajoutEtudiantClasse.xss">
+      <DependentUpon>ajoutEtudiantClasse.xsd</DependentUpon>
+    </None>
+    <None Include="ajoutEtudiantStatut.xsc">
+      <DependentUpon>ajoutEtudiantStatut.xsd</DependentUpon>
+    </None>
+    <None Include="ajoutEtudiantStatut.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ajoutEtudiantStatut.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ajoutEtudiantStatut.xss">
+      <DependentUpon>ajoutEtudiantStatut.xsd</DependentUpon>
+    </None>
+    <None Include="ajoutEtudiantVille.xsc">
+      <DependentUpon>ajoutEtudiantVille.xsd</DependentUpon>
+    </None>
+    <None Include="ajoutEtudiantVille.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ajoutEtudiantVille.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ajoutEtudiantVille.xss">
+      <DependentUpon>ajoutEtudiantVille.xsd</DependentUpon>
+    </None>
+    <None Include="classeDataSet.xsc">
+      <DependentUpon>classeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="classeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>classeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="classeDataSet.xss">
+      <DependentUpon>classeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="etudiantDataSet.xsc">
+      <DependentUpon>etudiantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="etudiantDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>etudiantDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="etudiantDataSet.xss">
+      <DependentUpon>etudiantDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

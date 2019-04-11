@@ -9,28 +9,28 @@ namespace EcoleLibrary
     class Ville
     {
         #region Attributs
-        private int idville;
-        private string nomville;
+        private int idVille;
+        private string nomVille;
         #endregion
 
         #region Propriétés
         public int Idville
         {
-            get { return idville; }
-            private set { idville = value; }
+            get { return idVille; }
+            private set { idVille = value; }
         }
         public string Nomville
         {
-            get { return nomville; }
-            private set { nomville = value; }
+            get { return nomVille; }
+            private set { nomVille = value; }
         }
         #endregion
 
         #region Constructeur
-        public Ville(int idville, string nomville)
+        public Ville(int idVille, string nomVille)
         {
-            Idville = idville;
-            Nomville = nomville;
+            Idville = idVille;
+            Nomville = nomVille;
         }
         #endregion
     }

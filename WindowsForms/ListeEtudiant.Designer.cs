@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace WindowsForms
+﻿namespace WindowsForms
 {
     partial class ListeEtudiant
     {
@@ -30,56 +28,142 @@ namespace WindowsForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.etudiantDataSet = new WindowsForms.etudiantDataSet();
+            this.etudiantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.etudiantTableAdapter = new WindowsForms.etudiantDataSetTableAdapters.etudiantTableAdapter();
+            this.idEtudiantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClasseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idVilleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idStatutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.etudiantDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.etudiantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 24);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Liste des étudiants";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(220, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Liste des étudiants";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // listView1
+            // dataGridView1
             // 
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(116, 59);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(343, 422);
-            this.listView1.TabIndex = 5;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEtudiantDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.idClasseDataGridViewTextBoxColumn,
+            this.idVilleDataGridViewTextBoxColumn,
+            this.idStatutDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.etudiantBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(590, 458);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button1
+            // etudiantDataSet
             // 
-            this.button1.Location = new System.Drawing.Point(30, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.etudiantDataSet.DataSetName = "etudiantDataSet";
+            this.etudiantDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // etudiantBindingSource
+            // 
+            this.etudiantBindingSource.DataMember = "etudiant";
+            this.etudiantBindingSource.DataSource = this.etudiantDataSet;
+            // 
+            // etudiantTableAdapter
+            // 
+            this.etudiantTableAdapter.ClearBeforeFill = true;
+            // 
+            // idEtudiantDataGridViewTextBoxColumn
+            // 
+            this.idEtudiantDataGridViewTextBoxColumn.DataPropertyName = "idEtudiant";
+            this.idEtudiantDataGridViewTextBoxColumn.HeaderText = "idEtudiant";
+            this.idEtudiantDataGridViewTextBoxColumn.Name = "idEtudiantDataGridViewTextBoxColumn";
+            this.idEtudiantDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "nomEtudiant";
+            this.dataGridViewTextBoxColumn1.HeaderText = "nomEtudiant";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "prenomEtudiant";
+            this.dataGridViewTextBoxColumn2.HeaderText = "prenomEtudiant";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "dateNaissanceEtudiant";
+            this.dataGridViewTextBoxColumn3.HeaderText = "dateNaissanceEtudiant";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "adresseEtudiant";
+            this.dataGridViewTextBoxColumn4.HeaderText = "adresseEtudiant";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "mailEtudiant";
+            this.dataGridViewTextBoxColumn5.HeaderText = "mailEtudiant";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // idClasseDataGridViewTextBoxColumn
+            // 
+            this.idClasseDataGridViewTextBoxColumn.DataPropertyName = "idClasse";
+            this.idClasseDataGridViewTextBoxColumn.HeaderText = "idClasse";
+            this.idClasseDataGridViewTextBoxColumn.Name = "idClasseDataGridViewTextBoxColumn";
+            // 
+            // idVilleDataGridViewTextBoxColumn
+            // 
+            this.idVilleDataGridViewTextBoxColumn.DataPropertyName = "idVille";
+            this.idVilleDataGridViewTextBoxColumn.HeaderText = "idVille";
+            this.idVilleDataGridViewTextBoxColumn.Name = "idVilleDataGridViewTextBoxColumn";
+            // 
+            // idStatutDataGridViewTextBoxColumn
+            // 
+            this.idStatutDataGridViewTextBoxColumn.DataPropertyName = "idStatut";
+            this.idStatutDataGridViewTextBoxColumn.HeaderText = "idStatut";
+            this.idStatutDataGridViewTextBoxColumn.Name = "idStatutDataGridViewTextBoxColumn";
             // 
             // ListeEtudiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(576, 505);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClientSize = new System.Drawing.Size(609, 538);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label2);
             this.Name = "ListeEtudiant";
             this.Text = "ListeEtudiant";
             this.Load += new System.EventHandler(this.ListeEtudiant_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.etudiantDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.etudiantBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,8 +171,19 @@ namespace WindowsForms
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
-        private Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private etudiantDataSet etudiantDataSet;
+        private System.Windows.Forms.BindingSource etudiantBindingSource;
+        private etudiantDataSetTableAdapters.etudiantTableAdapter etudiantTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEtudiantDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClasseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVilleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idStatutDataGridViewTextBoxColumn;
     }
 }

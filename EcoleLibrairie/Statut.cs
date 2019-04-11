@@ -6,46 +6,36 @@ namespace EcoleLibrary
     class Statut
     {
         #region Attributs
-        private Etudiant etudiant;
-        static double Prix_Etudiant = 5000;
-        static double Prix_PersonneReconversion = 3000;
-        public enum TypeStatut { Etudiant, PersonneReconversion };
+        private int idStatut;
+        private string nomStatut;
+        private int prixFormation;
         #endregion
 
         #region Méthodes
-        public static double getPrixClasse(Statut.TypeStatut typestatut)
+
+        public int Idstatut
         {
-            double prix = Prix_PersonneReconversion;
-
-            switch (typestatut)
-            {
-                case Statut.TypeStatut.Etudiant:
-                    prix = Prix_Etudiant;
-                    break;
-            }
-
-            return prix;
+            get { return idStatut; }
+            set { idStatut = value; }
         }
-
-        public TypeStatut typeclasseetudiant { get; set; }
-
-        public Etudiant Etudiant
+        public string Nomstatut
         {
-            get { return etudiant; }
-            set { etudiant = value; }
+            get { return nomStatut; }
+            set { nomStatut = value; }
         }
-
-        public void Identite()
+        public int Prixformation
         {
-            Console.WriteLine("ID : " + Etudiant.Id + "\nIdentité : " + Etudiant.Nom + " " + Etudiant.Prenom + "\nDate Naiss : " + Etudiant.DateNaissance.ToShortDateString() + "\n***********************");
+            get { return prixFormation; }
+            set { prixFormation = value; }
         }
         #endregion
 
         #region Constructeur
-        public Statut(Etudiant etudiant, TypeStatut typestatut)
+        public Statut(int idStatut, string nomStatut, int prixFormation)
         {
-            Etudiant = etudiant;
-            typeclasseetudiant = typestatut;
+            Idstatut = idStatut;
+            Nomstatut = nomStatut;
+            Prixformation = prixFormation;
         }
         #endregion
     }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nomclasse = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nbPlace = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,12 +46,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Ajouter une classe";
             // 
-            // textBox1
+            // nomclasse
             // 
-            this.textBox1.Location = new System.Drawing.Point(253, 135);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 10;
+            this.nomclasse.Location = new System.Drawing.Point(253, 135);
+            this.nomclasse.Name = "nomclasse";
+            this.nomclasse.Size = new System.Drawing.Size(100, 22);
+            this.nomclasse.TabIndex = 10;
+            this.nomclasse.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -71,12 +72,12 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Effectif max. :";
             // 
-            // textBox2
+            // nbPlace
             // 
-            this.textBox2.Location = new System.Drawing.Point(253, 175);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 13;
+            this.nbPlace.Location = new System.Drawing.Point(253, 175);
+            this.nbPlace.Name = "nbPlace";
+            this.nbPlace.Size = new System.Drawing.Size(100, 22);
+            this.nbPlace.TabIndex = 13;
             // 
             // button1
             // 
@@ -95,10 +96,10 @@
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(572, 499);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.nbPlace);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nomclasse);
             this.Controls.Add(this.label1);
             this.Name = "AjouterClasse";
             this.Text = "AjouterClasse";
@@ -111,10 +112,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nomclasse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nbPlace;
         private System.Windows.Forms.Button button1;
     }
 }

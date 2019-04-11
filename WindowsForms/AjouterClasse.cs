@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcoleLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,13 @@ namespace WindowsForms
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            GestionClasse newclasse = GestionClasse.Instance;
+            Classe c = new Classe(0, nomclasse.Text, Convert.ToInt32(nbPlace.Text));
+            newclasse.AjouterClasse(c);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
