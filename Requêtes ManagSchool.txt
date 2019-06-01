@@ -1,0 +1,3 @@
+SELECT COUNT(*) FROM etudiant;
+
+SELECT prixformation * COUNT(idetudiant) FROM etudiant AS e, statut AS s WHERE e.idstatut = s.idstatut;

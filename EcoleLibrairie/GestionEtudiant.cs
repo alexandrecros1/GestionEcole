@@ -59,10 +59,9 @@ namespace EcoleLibrary
             try
             {
                 Open();
-                string query = @"INSERT INTO Classe VALUES (@idEtudiant, @nomEtudiant, @prenomEtudiant, @dateNaissanceEtudiant,
-@adresseEtudiant, @mailEtudiant, @idClasse, @idVille, @idStatut)";
+                string query = @"INSERT INTO Etudiant (nomEtudiant, prenomEtudiant, dateNaissanceEtudiant, adresseEtudiant, mailEtudiant, idClasse,
+idVille, idStatut) VALUES (@nomEtudiant, @prenomEtudiant, @dateNaissanceEtudiant, @adresseEtudiant, @mailEtudiant, @idClasse, @idVille, @idStatut)";
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@idEtudiant", etudiant.Id);
                 cmd.Parameters.AddWithValue("@nomEtudiant", etudiant.Nom);
                 cmd.Parameters.AddWithValue("@prenomEtudiant", etudiant.Prenom);
                 cmd.Parameters.AddWithValue("@dateNaissanceEtudiant", etudiant.DateNaissance);
@@ -87,35 +86,36 @@ namespace EcoleLibrary
         // Supprimer un étudiant : le D dans CRUD
         public bool SupprimerEtudiant(EtudiantDto etudiant)
         {
-            int result = 0;
+            bool result = true;
             try
             {
                 Open();
-                string query = @"DELETE FROM Etudiant WHERE Idetudiant = @idEtudiant";
+                string query = @"DELETE FROM Etudiant WHERE idRtudiant = @idEtudiant";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idEtudiant", etudiant.Id);
-                result = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException)
             {
+                result = false;
             }
             finally
             {
                 Close();
             }
-            return false;
+            return result;
         }
 
         // Modifier un étudiant : le U dans CRUD
         public bool ModifierEtudiant(EtudiantDto etudiant)
         {
-            int result = 0;
+            bool result = true;
             try
             {
                 Open();
-                string query = @"UPDATE etudiant SET Idetudiant = @idEtudiant, Nometudiant = @nomEtudiant, Prenometudiant = @prenomEtudiant,
-Datenaissanceetudiant = @dateNaissanceEtudiant, Adresseetudiant = @adresseEtudiant, Mailetudiant = @mailEtudiant, Idclasse = @idClasse,
-Idville = @idVille, Idstatut = @idStatut WHERE Idetudiant = @idEtudiant";
+                string query = @"UPDATE Etudiant SET nomEtudiant = @nomEtudiant, prenomEtudiant = @prenomEtudiant,
+dateNaissanceEtudiant = @dateNaissanceEtudiant, adresseEtudiant = @adresseEtudiant, mailEtudiant = @mailEtudiant, idClasse = @idClasse,
+idVille = @idVille, idStatut = @idStatut WHERE idEtudiant = @idEtudiant";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idEtudiant", etudiant.Id);
                 cmd.Parameters.AddWithValue("@nomEtudiant", etudiant.Nom);
@@ -126,17 +126,17 @@ Idville = @idVille, Idstatut = @idStatut WHERE Idetudiant = @idEtudiant";
                 cmd.Parameters.AddWithValue("@idClasse", etudiant.Idclasse);
                 cmd.Parameters.AddWithValue("@idVille", etudiant.Idville);
                 cmd.Parameters.AddWithValue("@idStatut", etudiant.Idstatut);
-                result = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException)
             {
+                result = false;
             }
             finally
             {
                 Close();
             }
-            return false;
-
+            return result;
         }
         #endregion
 

@@ -48,11 +48,8 @@ C:\Users\Alexandre\Desktop\GestionEcole\WindowsForms\bin\Debug\EcoleLibrairie.pd
 C:\Users\Alexandre\Desktop\GestionEcole\WindowsForms\bin\Debug\EcoleLibrairie.dll.config
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.csprojAssemblyReference.cache
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.Accueil.resources
-C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.AjouterClasse.resources
-C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.AjouterEtudiant.resources
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.ListeClasse.resources
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.ListeEtudiant.resources
-C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.ModifierEtudiant.resources
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.Properties.Resources.resources
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.Statistiques.resources
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.csproj.GenerateResource.cache

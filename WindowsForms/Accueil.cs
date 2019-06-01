@@ -27,22 +27,6 @@ namespace WindowsForms
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // BOUTON AJOUT ETUDIANT
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AjouterEtudiant frm = new AjouterEtudiant();
-            frm.ShowDialog();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        { 
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Statistiques frm = new Statistiques();
@@ -61,10 +45,9 @@ namespace WindowsForms
             frm.ShowDialog();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            AjouterClasse frm = new AjouterClasse();
-            frm.ShowDialog();
+
         }
     }
 }

@@ -59,18 +59,12 @@ namespace EcoleLibrary
             try
             {
                 Open();
-                string query = @"INSERT INTO Classe VALUES (@idClasse, @nomClasse, @nbPlace)";
+
+                string query = "INSERT INTO Classe (nomClasse, nbPlace) VALUES (@nomClasse, @nbPlace)";
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@idClasse", classe.Idclasse);
                 cmd.Parameters.AddWithValue("@nomClasse", classe.Nomclasse);
                 cmd.Parameters.AddWithValue("@nbPlace", classe.Nbplace);
-                SqlParameter newId = cmd.Parameters.Add("@newIdClasse", SqlDbType.Int);
-                newId.Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
-
-                classe.Idclasse = Convert.ToInt32(newId.Value);
-                if (classe.Idclasse > 0)
-                    result = true;
 
             }
             catch (SqlException)
@@ -86,49 +80,50 @@ namespace EcoleLibrary
 
         // Supprimer une Classe : le D dans CRUD
         public bool SupprimerClasse(Classe classe)
-        {
-            int result = 0;
+        { 
+            bool result = true;
             try
             {
                 Open();
-                string query = @"DELETE FROM Classe WHERE Idclasse = @idClasse";
+                string query = @"DELETE FROM Classe WHERE idClasse = @idClasse";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idClasse", classe.Idclasse);
-                result = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException)
             {
+                result = false;
             }
             finally
             {
                 Close();
             }
-            return false;
+            return result;
         }
 
         // Modifier une Classe : le U dans CRUD
         public bool ModifierClasse(Classe classe)
         {
-            int result = 0;
+            bool result = true;
             try
             {
                 Open();
-                string query = @"UPDATE classe SET Idclasse = @idClasse, Nomclasse = @nomClasse, Nbplace = @nbPlace WHERE Idclasse = @idClasse";
+                string query = @"UPDATE Classe SET nomClasse = @nomClasse, nbPlace = @nbPlace WHERE idClasse = @idClasse";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idClasse", classe.Idclasse);
                 cmd.Parameters.AddWithValue("@nomClasse", classe.Nomclasse);
                 cmd.Parameters.AddWithValue("@nbPlace", classe.Nbplace);
-                result = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException)
             {
+                result = false;
             }
             finally
             {
                 Close();
             }
-            return false;
-
+            return result;
         }
         #endregion
         public GestionClasse() : base()

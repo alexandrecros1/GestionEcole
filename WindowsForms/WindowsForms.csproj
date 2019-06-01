@@ -65,18 +65,6 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="AjouterClasse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AjouterClasse.Designer.cs">
-      <DependentUpon>AjouterClasse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AjouterEtudiant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AjouterEtudiant.Designer.cs">
-      <DependentUpon>AjouterEtudiant.cs</DependentUpon>
-    </Compile>
     <Compile Include="ajoutEtudiantClasse.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,11 +102,10 @@
     <Compile Include="ListeEtudiant.Designer.cs">
       <DependentUpon>ListeEtudiant.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifierEtudiant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModifierEtudiant.Designer.cs">
-      <DependentUpon>ModifierEtudiant.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Statistiques.cs">
       <SubType>Form</SubType>
@@ -131,30 +118,17 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjouterClasse.resx">
-      <DependentUpon>AjouterClasse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AjouterEtudiant.resx">
-      <DependentUpon>AjouterEtudiant.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ListeClasse.resx">
       <DependentUpon>ListeClasse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListeEtudiant.resx">
       <DependentUpon>ListeEtudiant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifierEtudiant.resx">
-      <DependentUpon>ModifierEtudiant.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Statistiques.resx">
       <DependentUpon>Statistiques.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +206,10 @@
       <Project>{E9054C95-D60B-4ADA-82E0-24075B395270}</Project>
       <Name>EcoleLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo_managschool.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
