@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ViewAverageEtudiants" targetNamespace="http://tempuri.org/ViewAverageEtudiants.xsd" xmlns:mstns="http://tempuri.org/ViewAverageEtudiants.xsd" xmlns="http://tempuri.org/ViewAverageEtudiants.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="managschoolSQLserver" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="managschoolSQLserver (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsForms.Properties.Settings.GlobalReference.Default.managschoolSQLserver" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewAverageStudentsTableAdapter" GeneratorDataComponentClassName="ViewAverageStudentsTableAdapter" Name="ViewAverageStudents" UserDataComponentName="ViewAverageStudentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="managschoolSQLserver (Settings)" DbObjectName="managschool.dbo.ViewAverageStudents" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Moyenne_Etudiant_Par_Classe FROM dbo.ViewAverageStudents</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Moyenne_Etudiant_Par_Classe" DataSetColumn="Moyenne_Etudiant_Par_Classe" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ViewAverageEtudiants" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ViewAverageEtudiants" msprop:Generator_UserDSName="ViewAverageEtudiants">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewAverageStudents" msprop:Generator_TableClassName="ViewAverageStudentsDataTable" msprop:Generator_TableVarName="tableViewAverageStudents" msprop:Generator_TablePropName="ViewAverageStudents" msprop:Generator_RowDeletingName="ViewAverageStudentsRowDeleting" msprop:Generator_RowChangingName="ViewAverageStudentsRowChanging" msprop:Generator_RowEvHandlerName="ViewAverageStudentsRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewAverageStudentsRowDeleted" msprop:Generator_UserTableName="ViewAverageStudents" msprop:Generator_RowChangedName="ViewAverageStudentsRowChanged" msprop:Generator_RowEvArgName="ViewAverageStudentsRowChangeEvent" msprop:Generator_RowClassName="ViewAverageStudentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Moyenne_Etudiant_Par_Classe" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMoyenne_Etudiant_Par_Classe" msprop:Generator_ColumnPropNameInRow="Moyenne_Etudiant_Par_Classe" msprop:Generator_ColumnPropNameInTable="Moyenne_Etudiant_Par_ClasseColumn" msprop:Generator_UserColumnName="Moyenne_Etudiant_Par_Classe" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

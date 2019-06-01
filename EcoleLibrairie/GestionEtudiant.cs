@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -90,7 +89,7 @@ idVille, idStatut) VALUES (@nomEtudiant, @prenomEtudiant, @dateNaissanceEtudiant
             try
             {
                 Open();
-                string query = @"DELETE FROM Etudiant WHERE idRtudiant = @idEtudiant";
+                string query = @"DELETE FROM Etudiant WHERE idEtudiant = @idEtudiant";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@idEtudiant", etudiant.Id);
                 cmd.ExecuteNonQuery();

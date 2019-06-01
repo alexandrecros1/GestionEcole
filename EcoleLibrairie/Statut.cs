@@ -1,9 +1,10 @@
 ﻿using EcoleLibrary;
 using System;
+using System.Data.SqlClient;
 
 namespace EcoleLibrary
 {
-    class Statut
+    class Statut : GestionBase
     {
         #region Attributs
         private int idStatut;

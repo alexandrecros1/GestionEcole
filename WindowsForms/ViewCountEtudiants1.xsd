@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ViewCountEtudiants" targetNamespace="http://tempuri.org/ViewCountEtudiants1.xsd" xmlns:mstns="http://tempuri.org/ViewCountEtudiants1.xsd" xmlns="http://tempuri.org/ViewCountEtudiants1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="managschoolSQLserver" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="managschoolSQLserver (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsForms.Properties.Settings.GlobalReference.Default.managschoolSQLserver" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewCountStudentsTableAdapter" GeneratorDataComponentClassName="ViewCountStudentsTableAdapter" Name="ViewCountStudents" UserDataComponentName="ViewCountStudentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="managschoolSQLserver (Settings)" DbObjectName="managschool.dbo.ViewCountStudents" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nombre_Etudiants FROM dbo.ViewCountStudents</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nombre_Etudiants" DataSetColumn="Nombre_Etudiants" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ViewCountEtudiants" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ViewCountEtudiants" msprop:Generator_UserDSName="ViewCountEtudiants">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewCountStudents" msprop:Generator_TableClassName="ViewCountStudentsDataTable" msprop:Generator_TableVarName="tableViewCountStudents" msprop:Generator_TablePropName="ViewCountStudents" msprop:Generator_RowDeletingName="ViewCountStudentsRowDeleting" msprop:Generator_RowChangingName="ViewCountStudentsRowChanging" msprop:Generator_RowEvHandlerName="ViewCountStudentsRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewCountStudentsRowDeleted" msprop:Generator_UserTableName="ViewCountStudents" msprop:Generator_RowChangedName="ViewCountStudentsRowChanged" msprop:Generator_RowEvArgName="ViewCountStudentsRowChangeEvent" msprop:Generator_RowClassName="ViewCountStudentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre_Etudiants" msprop:Generator_ColumnVarNameInTable="columnNombre_Etudiants" msprop:Generator_ColumnPropNameInRow="Nombre_Etudiants" msprop:Generator_ColumnPropNameInTable="Nombre_EtudiantsColumn" msprop:Generator_UserColumnName="Nombre_Etudiants" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
 
 namespace EcoleLibrary
 {
     public class GestionClasse : GestionBase
     {
         private static GestionClasse instance;
-        #region Builders
-       
-        #endregion
 
         public List<Classe> ListeClasse()
         {
@@ -55,7 +51,7 @@ namespace EcoleLibrary
         // Ajouter une Classe : le C dans CRUD
         public bool AjouterClasse(Classe classe)
         {
-            bool result = false;
+            bool result = true;
             try
             {
                 Open();

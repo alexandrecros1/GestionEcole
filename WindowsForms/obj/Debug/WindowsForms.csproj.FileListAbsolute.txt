@@ -28,11 +28,8 @@ C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\bin\Debug\Google.Protobuf.xm
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\bin\Debug\MySql.Data.xml
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.csprojAssemblyReference.cache
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.Accueil.resources
-C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.AjouterClasse.resources
-C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.AjouterEtudiant.resources
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.ListeClasse.resources
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.ListeEtudiant.resources
-C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.ModifierEtudiant.resources
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.Properties.Resources.resources
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.Statistiques.resources
 C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\obj\Debug\WindowsForms.csproj.GenerateResource.cache
@@ -68,3 +65,5 @@ C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\bin\Debug\Goo
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\bin\Debug\MySql.Data.xml
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\obj\Debug\WindowsForms.csproj.CopyComplete
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\WindowsForms\bin\Debug\Google.Protobuf.pdb
+C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\bin\Debug\Google.Protobuf.pdb
+C:\Users\Velikyan\Desktop\GestionEcole\WindowsForms\bin\Debug\BouncyCastle.Crypto.dll

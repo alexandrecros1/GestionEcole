@@ -4,9 +4,7 @@ C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\EcoleLibrairie.d
 C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\EcoleLibrairie.dll
 C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\EcoleLibrairie.pdb
 C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\Google.Protobuf.dll
-C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\MySql.Data.dll
 C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\Google.Protobuf.xml
-C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\MySql.Data.xml
 C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\obj\Debug\EcoleLibrary.csproj.CopyComplete
 C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\obj\Debug\EcoleLibrairie.dll
 C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\obj\Debug\EcoleLibrairie.pdb
@@ -35,3 +33,5 @@ C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\EcoleLibrairie\bin\Debug\M
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\EcoleLibrairie\obj\Debug\EcoleLibrary.csproj.CopyComplete
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\EcoleLibrairie\bin\Debug\EcoleLibrairie.dll.config
 C:\Users\Alexandre\Documents\EPSI\B2 BTS\GestionEcole\EcoleLibrairie\bin\Debug\Google.Protobuf.pdb
+C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\Google.Protobuf.pdb
+C:\Users\Velikyan\Desktop\GestionEcole\EcoleLibrairie\bin\Debug\BouncyCastle.Crypto.dll
