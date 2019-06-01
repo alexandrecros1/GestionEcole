@@ -32,7 +32,10 @@ namespace WindowsForms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            GestionClasse ajoutCla = GestionClasse.Instance;
 
+            Classe classe = new Classe(0, nomClasse.Text, Convert.ToInt32(nbPlace.Text));
+            ajoutCla.AjouterClasse(classe);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
